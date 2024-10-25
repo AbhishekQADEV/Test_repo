@@ -1,74 +1,58 @@
-// Implementation of Binary Search Tree
-#include <stdio.h>
-#include <stdlib.h>
+# Project Name 
 
-struct BST{
-    int data;
-    struct BST* left;
-    struct BST* right;
-};
+This is a repository of various C programs and algorithms including Binary Search Tree, Doubly Linked List, Bubble Sort, Linear Search and others.
 
-struct BST *CreateNode(){
-    struct BST* new =(struct BST*)malloc(sizeof(struct BST));
-    new->left = NULL;
-    new->right = NULL;
-    return new;
-}
 
-void Insert(struct BST** RootPtr, int value){
-    struct BST* temp = *RootPtr;
-    if(temp == NULL){
-        /*When list is empty*/
-        struct BST* NewNode = CreateNode();
-        NewNode->data = value;
-        *RootPtr = NewNode;
-    }
-    else if(value <= temp->data){
-        /*If user value is less then current node value insert in left of the node...*/
-        struct BST* NewNode = CreateNode();
-        NewNode->data = value;
-        temp->left = NewNode;
-    }
-    else{
-        /*If user value is greater then current node value insert at right of the node*/
-        struct BST* NewNode = CreateNode();
-        NewNode->data = value;
-        temp->right = NewNode;
-    }
-}
+## Software Requirements
 
-int Search(struct BST* RootPtr, int item){
-    /*Implemented search using recursion*/
-    if(RootPtr == NULL){
-        return 0;/*Returns 0 if list is empty*/
-    }
-    else if(item == RootPtr->data){
-        return 1;/*Returns 1 when element found*/
-    }
-    else if(item < RootPtr->data){
-        Search(RootPtr->left, item);/*Otherwise search in left side of binary tree if searching value is less then the current node value*/
-    }
-    else{
-        Search(RootPtr->right, item);/*Otherwise search in right side of binary tree if searching value is greater then the current node value*/
-    }
-}
+- GCC compiler, version 9.3.0 and above
 
-void main(){
-    struct BST* RootPtr = NULL;
-    int item, cont, key;
-    do{
-        printf("Enter item: ");
-        scanf("%d",&item);
-        Insert(&RootPtr, item);
-        printf("\n1 to keep inserting/ 0 to Exit: ");
-        scanf("%d",&cont);
-    }while(cont == 1);
-    printf("\nEnter element to search: ");
-    scanf("%d",&key);
-    if(Search(RootPtr, key)== 0){
-        printf("\nFound\n");
-    }
-    else{
-        printf("\nNot Found\n");
-    }
-}
+For Mac:
+- Xcode command line tools
+
+For Windows: 
+- MinGW
+
+- There is no other external dependency required to run these programs.
+
+## Instructions for setup and running
+Please follow the below steps to setup the environments on your system:
+
+### Mac:
+```
+#Install Xcode command line tools that includes GCC
+xcode-select --install
+
+# Verify installation
+gcc --version
+```
+
+### Windows:
+```
+#Download MinGW from https://osdn.net/projects/mingw/releases/
+#Follow the installer instructions
+#Add C:\MinGW\bin to your PATH
+
+#Verify installation, open PowerShell or Command Prompt and type
+gcc --version
+```
+
+To run a specific C program, navigate to the directory containing the C file in terminal (Mac) or command prompt (Windows) and use the following commands:
+
+```
+#Compile the code
+gcc your_file_name.c -o output_file_name
+
+#Run the program
+./output_file_name
+```
+
+Replace "your_file_name.c" with the name of the C file you want to run and "output_file_name" can be any name you choose for the executable file that will be created after compilation.
+
+Please note that these are simple C programs that run on the console, thus no specific configuration is needed for specific environments.
+
+These programs do not need any specific database setup.
+
+### CI/CD Process
+
+If there are any steps for Continuous Deployment (CI/CD) it would involve setting up the environment, which depends upon the platform such as Azure Pipelines, Jenkins, GitLab and others. As of now, there is no CI/CD pipeline setup for this project.
