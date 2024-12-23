@@ -6,3 +6,12 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Refactored code
+ignored_files = [
+    "/shelf/",
+    "/workspace.xml",
+    "/httpRequests/",
+    "/dataSources/",
+    "/dataSources.local.xml"
+]
