@@ -1,6 +1,7 @@
 // Implementing Doubly linked list.
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
 struct Node {
     int value;
@@ -48,11 +49,12 @@ void ReverseDisplay() {
     printf("\n");
 }
 
-void main() {
+int main() {
     int n, val;
     printf("Enter number of elements: ");
     scanf("%d",&n);
 
+    #pragma omp parallel for
     for (int i=0; i<n; i++) {
         printf("Enter element: ");
         scanf("%d",&val);
@@ -60,4 +62,6 @@ void main() {
     }
     Display();
     ReverseDisplay();
+    
+    return 0;
 }
