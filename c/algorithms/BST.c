@@ -1,4 +1,3 @@
-// Implementation of Binary Search Tree 
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
