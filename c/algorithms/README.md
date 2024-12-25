@@ -7,3 +7,15 @@ This is my first open source project, so i am open to criticisms, bugs, and idea
 `make`
 ### To compile (without a makefile)
 `gcc -o whatever-file`
+
+// Remove unused imports
+
+// Use Efficient Algorithms and Data Structures
+
+// Parallelize Operations
+
+// Use Promise.all to handle multiple asynchronous operations concurrently
+
+// Add necessary packages for performance optimization
+
+// Update code logic for performance improvement

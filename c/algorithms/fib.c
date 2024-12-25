@@ -1,18 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
 
 int main()
 {
-    long a;
-    long b;
+    long a = 0;
+    long b = 1;
     
-    for(a = 0, b = 1; b > a; b++)
+    #pragma omp parallel
     {
-        a++;
-        printf("%ld \n %ld", &a, &b);
+        while (b > a)
+        {
+            #pragma omp critical
+            {
+                a++;
+                printf("%ld \n %ld\n", a, b);
+            }
+            #pragma omp barrier
+            #pragma omp single
+            {
+                b++;
+            }
+        }
     }
     
-    if(b == sizeof(long))
+    if (b == sizeof(long))
     {
         exit(1);
     }
+    
+    return 0;
 }
