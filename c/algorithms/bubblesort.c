@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
 
 void bubble_sort(int *array, int len) 
 {
     for (int i = 0; i < len; i++) {
+        #pragma omp parallel for
         for (int j = 0; j < len - i - 1; j++) {
             if (array[j] > array[j + 1]) {
                 int tmp = array[j];
