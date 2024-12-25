@@ -17,12 +17,12 @@ int main(void)
 {
     int yarr[] = {3, 9, 4, 8, 7, 6, 1, 2, 0, 10};
     
-    bubble_sort(yarr, 10);
+    bubble_sort(yarr, sizeof(yarr)/sizeof(yarr[0]));
 
     printf("[");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < sizeof(yarr)/sizeof(yarr[0]); i++) {
         printf("%d", yarr[i]);
-        if (i < 9) {
+        if (i < sizeof(yarr)/sizeof(yarr[0]) - 1) {
             printf(", ");
         }
     }

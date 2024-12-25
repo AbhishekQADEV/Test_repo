@@ -1,9 +1,8 @@
-# algorithms
-A open source repository of different kinds of algorithms in c. Newbies are encouraged to contribute!
-This is my first open source project, so i am open to criticisms, bugs, and ideas.
+```c
+#include <stdio.h>
 
-## Linux:
-### To compile  (with a makefile)
-`make`
-### To compile (without a makefile)
-`gcc -o whatever-file`
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+```
