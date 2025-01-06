@@ -10,6 +10,16 @@
         // Parallelize independent asynchronous operations using Promise.all
         Promise.all([
             // Add your asynchronous operations here
+            new Promise((resolve, reject) => {
+                // Asynchronous operation 1
+                // resolve(result1); // Uncomment and replace result1 with the actual result
+                // reject(error1); // Uncomment and replace error1 with the actual error
+            }),
+            new Promise((resolve, reject) => {
+                // Asynchronous operation 2
+                // resolve(result2); // Uncomment and replace result2 with the actual result
+                // reject(error2); // Uncomment and replace error2 with the actual error
+            })
         ]).then(results => {
             // Handle the results of the asynchronous operations
         }).catch(error => {
