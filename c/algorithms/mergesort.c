@@ -39,7 +39,7 @@ void mergesort(int a[], int low, int high)
 int main()
 {
 	int a[7] = {83, 20, 9, 50, 115, 61, 17};
-	int n = 7;
+	int n = sizeof(a) / sizeof(a[0]); // calculate the size of the array
 
 	mergesort(a, 0, n - 1);
 	
