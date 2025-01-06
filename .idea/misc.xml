@@ -2,5 +2,7 @@
 <project version="4">
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
+    <!-- Add the following line to enable auto-import -->
+    <option name="OPTIMIZE_IMPORTS_ON_THE_FLY" value="true" />
   </component>
 </project>
